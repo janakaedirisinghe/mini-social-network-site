@@ -18,7 +18,7 @@
 			
 			<div class="col-md-6 col-md-offset-3">
 				<header><h3>What other people say...</h3></header>
-				<article>
+				<article class="post">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -36,7 +36,7 @@
 					</div>
 
 				</article>
-				<article>
+				<article class="post">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
