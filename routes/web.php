@@ -25,3 +25,8 @@ Route::get('/dashboard',[
 	'uses'=> 'UserController@getDashboard',
 	'as' => 'dashboard'
 ]);
+
+Route::post('/signin',[
+	'uses' => 'UserController@postSignIn',
+	'as' => 'signin'
+]);
