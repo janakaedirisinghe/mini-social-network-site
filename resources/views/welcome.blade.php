@@ -26,11 +26,11 @@
 
 				<div class="form-group">
 					<label for="email"> Email</label>
-					<input type="text" class="form-control" name="email" id="email">
+					<input type="text" class="form-control" name="email" id="email" value="{{ Request::old('email') }}">
 				</div>
 				<div class="form-group">
 					<label for="first_name"> First Name</label>
-					<input type="text" class="form-control" name="first_name" id="first_name">
+					<input type="text" class="form-control" name="first_name" id="first_name" value="{{ Request::old('first_name') }}">
 				</div>
 				<div class="form-group">
 					<label for="password"> Password</label>
