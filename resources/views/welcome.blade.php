@@ -24,11 +24,11 @@
 			<form method="post" action="/signup">
 				 {{csrf_field()}}
 
-				<div class="form-group">
+				<div class="form-group {{ $errors->has('email') ? 'has-error' : ' ' }}">
 					<label for="email"> Email</label>
 					<input type="text" class="form-control" name="email" id="email" value="{{ Request::old('email') }}">
 				</div>
-				<div class="form-group">
+				<div class="form-group {{ $errors->has('first_name') ? 'has-error' : ' ' }}">
 					<label for="first_name"> First Name</label>
 					<input type="text" class="form-control" name="first_name" id="first_name" value="{{ Request::old('first_name') }}">
 				</div>
