@@ -4,12 +4,14 @@
 	<section class="row new-post">
 		<div class="col-md-6 col-md-offset-3">
 			<header><h3>What do you have to say?</h3></header>
-			<form action="#" method="post">
+			<form action="/createpost" method="post">
+				{{csrf_field()}}
 				<div class="form-group">
-					<textarea name="new-post" id="new-post" rows="5" placeholder="Your post" class="form-control"></textarea>
+					<textarea name="body" id="new-post" rows="5" placeholder="Your post" class="form-control"></textarea>
 
 				</div>
 				<button type="submit" class="btn btn-primary" >Create Post</button>
+				<input type="hidden" name="" value="{{ Session::token() }}" name="_token">
 			</form>
 		</div>
 	</section>
