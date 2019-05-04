@@ -16,7 +16,7 @@ event.preventDefault();
 $('#modal-save').on('click',function(){
 	 $.ajax({
             method: 'POST',
-            url: url,
+            url: urlEdit,
             data: {body: $('#post-body').val(), postId: postId, _token: token}
         })
 		.done(function(msg){
@@ -27,19 +27,16 @@ $('#modal-save').on('click',function(){
 		});
 });
 
-$('.like').on('click',function(event){
-	event.preventDefault();
-	postId = event.target.parentNode.parentNode.dataset['postid'];
-	var isLike = event.target.previousElementSibling == null;
-
-	$.ajax({
-		method: ' POST',
-		url: urlLike,
-		data: {isLike: isLike, postId: postId, _token: token}
-	})
-	.done(function(){
-		//change the page
-	});
-
-
+$('.posts').find('.post').find('.interaction').find('.like').on('click', function(event) {
+    event.preventDefault();
+    postId = event.target.parentNode.parentNode.dataset['postid'];
+    var isLike = event.target.previousElementSibling == null;
+    $.ajax({
+        method: 'POST',
+        url: urlLike,
+        data: {isLike: isLike, postId: postId, _token: token}
+    })
+        .done(function() {
+           //
+        });
 });

@@ -91,11 +91,10 @@
   </div>
 </div>
 
-<script type="text/javascript">
-		var token = '{{ Session::token() }}';
-		var url ='{{ route('edit')  }}';
-		var urlLike ='{{ route('like')  }}';
-</script>
-
+ <script>
+         var token = '{{ Session::token() }}';
+        var urlEdit = '{{ route('edit') }}';
+        var urlLike = '{{ route('like') }}';
+ </script>
 @endsection
 
