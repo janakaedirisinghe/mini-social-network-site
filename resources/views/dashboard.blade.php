@@ -7,6 +7,7 @@
 	<section class="row new-post">
 		<div class="col-md-6 col-md-offset-3">
 			<header><h3>What do you have to say?</h3></header>
+
 			<form action="{{ route('post.create') }}" method="post">
 				{{csrf_field()}}
 				<div class="form-group">
@@ -24,7 +25,7 @@
 			<div class="col-md-6 col-md-offset-3">
 				<header><h3>What other people say...</h3></header>
 				@foreach($posts as $post)
-					<article class="post">
+					<article class="post" data-postid="{{ $post->id }}">
 						<p>
 							{{ $post ->body  }}
 						</p>
@@ -83,7 +84,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" name="model-save" id="model-save" class="btn btn-primary">Save changes</button>
+        <button type="submit" name="model-save" id="model-save" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

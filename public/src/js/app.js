@@ -5,8 +5,8 @@ $('.posts').find('.post').find('.interaction').find('.badge-success').on('click'
 	//console.log('it works');
 event.preventDefault();
 
-    postBodyElement = event.target.parentNode.parentNode.childNodes[1];
-    var postBody = postBodyElement.textContent;
+    var postBody = event.target.parentNode.parentNode.childNodes[1].textContent;
+   
     postId = event.target.parentNode.parentNode.dataset['postid'];
     $('#post-body').val(postBody);
     $('#edit-modal').modal();

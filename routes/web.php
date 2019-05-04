@@ -53,7 +53,7 @@ Route::get('/logout',[
 ]);
 
 Route::post('/edit',function(\Illuminate\Http\Request $request){
-	return response()->json(['message' => $request['body']]);
+	return response()->json(['message' => $request['postId']]);
 
 
 })->name('edit');
