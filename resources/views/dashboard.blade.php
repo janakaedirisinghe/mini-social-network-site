@@ -32,10 +32,10 @@
 							Post by {{$post->user->first_name}} on {{ $post-> created_at}}
 						</div>
 						<div class="interaction">
-							<a href="#">Like</a>
-							<a href="#">DisLike</a>
-							<a href="#">Edit</a>
-							<a href="{{ route('post.delete',['post_id' => $post->id ]) }}">Delete</a>
+							<a href="#" class="badge badge-pill badge-primary">Like</a> 
+							<a href="#" class="badge badge-pill badge-warning">Dislike</a> 
+							<a href="#" class="badge badge-pill badge-success">Edit</a> 
+							<a href="{{ route('post.delete',['post_id' => $post->id ]) }}" class="badge badge-pill badge-danger">Delete</a>
 						</div>
 
 					</article>
