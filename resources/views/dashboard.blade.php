@@ -4,7 +4,7 @@
 	<section class="row new-post">
 		<div class="col-md-6 col-md-offset-3">
 			<header><h3>What do you have to say?</h3></header>
-			<form action="/createpost" method="post">
+			<form action="{{ route('post.create') }}" method="post">
 				{{csrf_field()}}
 				<div class="form-group">
 					<textarea name="body" id="new-post" rows="5" placeholder="Your post" class="form-control"></textarea>
