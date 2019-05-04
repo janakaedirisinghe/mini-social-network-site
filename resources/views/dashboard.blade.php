@@ -75,7 +75,7 @@
        <form>
        		<div class="form-group">
        			
-       			<textarea name="post-body" class="form-control" cols="30" rows="5">
+       			<textarea name="post-body" class="form-control" cols="30" rows="5" id="post-body">
        				
        			</textarea>
        		</div>
@@ -83,11 +83,16 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" name="model-save" id="model-save" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+		var token = '{{ Session::token() }}';
+		var url ='{{ route('edit')  }}';
+</script>
 
 @endsection
 
