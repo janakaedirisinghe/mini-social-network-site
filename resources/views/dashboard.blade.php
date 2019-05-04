@@ -84,7 +84,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" name="model-save" id="model-save" class="btn btn-primary">Save changes</button>
+        <button type="submit" name="modal-save" id="modal-save" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

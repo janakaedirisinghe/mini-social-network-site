@@ -12,7 +12,7 @@ event.preventDefault();
     $('#edit-modal').modal();
 });
 
-$('#model-save').on('click',function(){
+$('#modal-save').on('click',function(){
 	 $.ajax({
             method: 'POST',
             url: url,
