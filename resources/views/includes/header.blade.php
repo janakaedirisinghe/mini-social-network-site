@@ -13,6 +13,7 @@
       </li>
        <li class="nav-item">
         <a class="nav-link" href="{{ route('logout')}}">Logout</a>
+       
       </li>
       
       
@@ -21,3 +22,4 @@
   </div>
 </nav>
 </header>
+

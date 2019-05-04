@@ -7,7 +7,8 @@
 
 	<section class="row new-post">
 		<div class="col-md-6 col-md-offset-3">
-			<header><h3>What do you have to say?</h3></header>
+			<header><h3>Hello  {{Auth::user()->first_name}}!</h3></header>
+			<header><h4>What do you have to say?</h4></header>
 
 			<form action="{{ route('post.create') }}" method="post">
 				{{csrf_field()}}
@@ -20,6 +21,7 @@
 			</form>
 		</div>
 	</section>
+
 
 	<section class="row posts">
 			
@@ -36,7 +38,7 @@
 						<div class="interaction">
 
 							<a href="#" class="badge badge-pill badge-warning" style="text-decoration: none; color: white">{{ Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'}}</a> 
-							<a href="#" class="badge badge-pill badge-warning">{{ Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'}}</a> 
+							<a href="#" class="badge badge-pill badge-warning" style="text-decoration: none;color: white">{{ Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'}}</a> 
 
 								@if(Auth::user() == $post->user)
 										<a href="#" class="badge badge-pill badge-success">Edit</a> 
@@ -97,5 +99,9 @@
         var urlEdit = '{{ route('edit') }}';
         var urlLike = '{{ route('like') }}';
  </script>
+
+
+
+
 @endsection
 
