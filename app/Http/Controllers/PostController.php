@@ -9,11 +9,22 @@ use App\Post;
 class PostController extends Controller
 {
     public function postCreatePost(Request $request){
+    	
+    	$this->validate($request,[
+    		'body' => 'required|max:99|min:5',
+
+    	]);
+
+
     	$post = new Post();
     	$post->body = $request['body'];
+    	$message = 'There was an error' ;
+    	if ($request->user() -> posts()->save($post)) {
+    		$message = 'Post successfully created!';
+    	}
 
-    	$request->user() -> posts()->save($post);
-    	return redirect() -> route('dashboard');
+
+    	return redirect() -> route('dashboard')->with(['message' => '$message'])  ;
 
     }
 }
