@@ -21,11 +21,7 @@ Route::post('/signup',[
 	'as' => 'signup'
 ]);
 
-Route::get('/dashboard',[
-	'uses'=> 'UserController@getDashboard',
-	'as' => 'dashboard',
-	'middleware' => 'auth'
-]);
+
 
 Route::post('/signin',[
 	'uses' => 'UserController@postSignIn',
@@ -36,4 +32,10 @@ Route::post('/signin',[
 Route::post('/createpost',[
 	'uses' => 'PostController@postCreatePost',
 	'as' => 'post.create'
+]);
+
+Route::get('/dashboard',[
+	'uses'=> 'PostController@getDashboard',
+	'as' => 'dashboard',
+	'middleware' => 'auth'
 ]);
