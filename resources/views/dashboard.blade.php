@@ -34,8 +34,16 @@
 						<div class="interaction">
 							<a href="#" class="badge badge-pill badge-primary">Like</a> 
 							<a href="#" class="badge badge-pill badge-warning">Dislike</a> 
-							<a href="#" class="badge badge-pill badge-success">Edit</a> 
-							<a href="{{ route('post.delete',['post_id' => $post->id ]) }}" class="badge badge-pill badge-danger">Delete</a>
+
+								@if(Auth::user() == $post->user)
+										<a href="#" class="badge badge-pill badge-success">Edit</a> 
+									<a href="{{ route('post.delete',['post_id' => $post->id ]) }}" class="badge badge-pill badge-danger">Delete</a>
+
+								@endif
+
+							
+
+
 						</div>
 
 					</article>
