@@ -1,4 +1,4 @@
-$('.post').find('.interaction').find('.edit').on('click',function(){
+$('.posts').find('.post').find('.interaction').find('.badge-success').on('click',function(){
 	console.log('it works');
-	//$('#edit-modal').modal();
+	$('#edit-modal').modal('show');
 });

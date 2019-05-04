@@ -36,7 +36,7 @@
 							<a href="#" class="badge badge-pill badge-warning">Dislike</a> 
 
 								@if(Auth::user() == $post->user)
-										<a href="#" class="edit">Edit</a> 
+										<a href="#" class="badge badge-pill badge-success">Edit</a> 
 
 									<a href="{{ route('post.delete',['post_id' => $post->id ]) }}" class="badge badge-pill badge-danger">Delete</a>
 
@@ -62,7 +62,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
