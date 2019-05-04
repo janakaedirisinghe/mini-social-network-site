@@ -5,7 +5,8 @@ $('.posts').find('.post').find('.interaction').find('.badge-success').on('click'
 	//console.log('it works');
 event.preventDefault();
 
-    var postBody = event.target.parentNode.parentNode.childNodes[1].textContent;
+	postBodyElement = event.target.parentNode.parentNode.childNodes[1];
+    var postBody = postBodyElement.textContent;
    
     postId = event.target.parentNode.parentNode.dataset['postid'];
     $('#post-body').val(postBody);
@@ -19,6 +20,8 @@ $('#modal-save').on('click',function(){
             data: {body: $('#post-body').val(), postId: postId, _token: token}
         })
 		.done(function(msg){
-			console.log(msg['message']); 
+				
+				$(postBodyElement).text(msg['new_body']);
+
 		});
 });
