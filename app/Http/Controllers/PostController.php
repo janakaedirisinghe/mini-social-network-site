@@ -55,6 +55,9 @@ class PostController extends Controller
     	]);
 
     	$post = Post::find($request['postId']);
+    	if (Auth::user() != $post->user) {
+    			return redirect()->back();
+    		}
     	$post->body = $request['body'];
     	$post->update();
     	return response()->json(['new_body' => $post->body],200);

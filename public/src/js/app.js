@@ -23,5 +23,6 @@ $('#modal-save').on('click',function(){
 				
 				$(postBodyElement).text(msg['new_body']);
 
+				$('#edit-modal').modal('hide');
 		});
 });

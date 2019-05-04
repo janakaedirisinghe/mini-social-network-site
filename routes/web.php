@@ -48,7 +48,7 @@ Route::get('/delete-post/{post_id}',[
 ]);
 
 Route::get('/logout',[
-	'uses' => 'UserController2@getLogout',
+	'uses' => 'UserController@getLogout',
 	'as' => 'logout'
 ]);
 
