@@ -62,5 +62,18 @@ class UserController extends Controller
     	return view('account',['user' => Auth::user()]);
     }
 
+    public function postSaveAccount(Request $request){
+    		$this->validate($request,[
+    			'first_name' => 'required|max:99'
+    		]);
+
+    		$user = Auth::user();
+    		$user->first_name = $request-['first_name'];
+    		$user->update();
+    		$file = $request->file('image');
+    		$filename = $request['first_name'] . '-' . $user->id .'.jpg';
+
+    }
+
 }
 
