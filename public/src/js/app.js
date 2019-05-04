@@ -27,7 +27,7 @@ $('#modal-save').on('click',function(){
 		});
 });
 
-$('.posts').find('.post').find('.interaction').find('.like').on('click', function(event) {
+$('.posts').find('.post').find('.interaction').find('.badge-warning').on('click', function(event) {
     event.preventDefault();
     postId = event.target.parentNode.parentNode.dataset['postid'];
     var isLike = event.target.previousElementSibling == null;
