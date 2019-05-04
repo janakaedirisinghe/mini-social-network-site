@@ -10,13 +10,13 @@ $('#post-body').val(postBody);
 });
 
 $('#model-save').on('click',function(){
-	$.ajax({
+	$.ajax()({
 		method: 'POST',
 		url: url,
-		data: { body: $('#post-body').val(),postId: '', _token: token }
+		data: { body: $('#post-body').val(), postId: '', _token: token }
 
-	});
+	})
 		.done(function(msg){
-			console.log(msg['message']);
+			console.log(msg['message']); 
 		});
 });
