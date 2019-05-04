@@ -4,9 +4,11 @@
 
 @include('includes.message-block')
 
+
 	<section class="row new-post">
 		<div class="col-md-6 col-md-offset-3">
 			<header><h3>What do you have to say?</h3></header>
+
 			<form action="{{ route('post.create') }}" method="post">
 				{{csrf_field()}}
 				<div class="form-group">
@@ -24,7 +26,7 @@
 			<div class="col-md-6 col-md-offset-3">
 				<header><h3>What other people say...</h3></header>
 				@foreach($posts as $post)
-					<article class="post">
+					<article class="post" data-postid="{{ $post->id }}">
 						<p>
 							{{ $post ->body  }}
 						</p>
@@ -36,7 +38,7 @@
 							<a href="#" class="badge badge-pill badge-warning">Dislike</a> 
 
 								@if(Auth::user() == $post->user)
-										<a href="#" class="edit">Edit</a> 
+										<a href="#" class="badge badge-pill badge-success">Edit</a> 
 
 									<a href="{{ route('post.delete',['post_id' => $post->id ]) }}" class="badge badge-pill badge-danger">Delete</a>
 
@@ -62,7 +64,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -75,7 +77,7 @@
        <form>
        		<div class="form-group">
        			
-       			<textarea name="post-body" class="form-control" cols="30" rows="5">
+       			<textarea name="post-body" class="form-control" cols="30" rows="5" id="post-body">
        				
        			</textarea>
        		</div>
@@ -83,11 +85,16 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" name="modal-save" id="modal-save" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+		var token = '{{ Session::token() }}';
+		var url ='{{ route('edit')  }}';
+</script>
 
 @endsection
 

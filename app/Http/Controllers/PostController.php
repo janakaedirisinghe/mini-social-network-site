@@ -48,4 +48,18 @@ class PostController extends Controller
 
 
     }
+    public function postEditPost(Request $request){
+
+    	$this->validate($request,[
+    		'body' => 'required|max:99|min:4'
+    	]);
+
+    	$post = Post::find($request['postId']);
+    	if (Auth::user() != $post->user) {
+    			return redirect()->back();
+    		}
+    	$post->body = $request['body'];
+    	$post->update();
+    	return response()->json(['new_body' => $post->body],200);
+    }
 }
