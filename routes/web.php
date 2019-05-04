@@ -31,11 +31,18 @@ Route::post('/signin',[
 
 Route::post('/createpost',[
 	'uses' => 'PostController@postCreatePost',
-	'as' => 'post.create'
+	'as' => 'post.create',
+	'middleware' => 'auth'
 ]);
 
 Route::get('/dashboard',[
 	'uses'=> 'PostController@getDashboard',
 	'as' => 'dashboard',
+	'middleware' => 'auth'
+]);
+
+Route::get('/delete-post/{post_id}',[
+	'uses' => 'PostController@getDeletePost',
+	'as' => 'post.delete',
 	'middleware' => 'auth'
 ]);
