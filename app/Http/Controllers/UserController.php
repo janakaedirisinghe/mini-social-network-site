@@ -57,5 +57,10 @@ class UserController extends Controller
     	return redirect('/') ->with(['message' => 'Successfully Logout!']);
     }
 
+    public function getAccount(){
+
+    	return view('account',['user' => Auth::user()]);
+    }
+
 }
 
