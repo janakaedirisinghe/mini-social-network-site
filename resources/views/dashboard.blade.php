@@ -31,7 +31,7 @@
 							{{ $post ->body  }}
 						</p>
 						<div class="info">
-							Post by {{$post->user->first_name}} on {{ $post-> created_at}}
+							Post by {{$post->user->first_name}} <small>on {{ $post-> created_at}}  updated on {{ $post-> updated_at }}</small>
 						</div>
 						<div class="interaction">
 
