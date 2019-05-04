@@ -34,8 +34,8 @@
 							Post by {{$post->user->first_name}} on {{ $post-> created_at}}
 						</div>
 						<div class="interaction">
-							<a href="#" class="badge badge-pill badge-primary">Like</a> 
-							<a href="#" class="badge badge-pill badge-warning">Dislike</a> 
+							<a href="#" class="like">Like</a> 
+							<a href="#" class="like">Dislike</a> 
 
 								@if(Auth::user() == $post->user)
 										<a href="#" class="badge badge-pill badge-success">Edit</a> 
@@ -94,6 +94,7 @@
 <script type="text/javascript">
 		var token = '{{ Session::token() }}';
 		var url ='{{ route('edit')  }}';
+		var urlLike ='{{ route('like')  }}';
 </script>
 
 @endsection
