@@ -50,6 +50,7 @@ class PostController extends Controller
 
 
     }
+<<<<<<< HEAD
 
     public function getUserPost($user_id){
     		$posts = Post::orderBy('created_at','desc')->where('user_id',$user_id)->get();
@@ -60,6 +61,8 @@ class PostController extends Controller
     }
 
 
+=======
+>>>>>>> origin/master
     public function postEditPost(Request $request){
 
     	$this->validate($request,[
@@ -74,6 +77,7 @@ class PostController extends Controller
     	$post->update();
     	return response()->json(['new_body' => $post->body],200);
     }
+<<<<<<< HEAD
 
  public function postLikePost(Request $request)
     {
@@ -106,4 +110,6 @@ class PostController extends Controller
         }
         return null;
     }
+=======
+>>>>>>> origin/master
 }

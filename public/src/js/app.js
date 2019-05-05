@@ -16,7 +16,11 @@ event.preventDefault();
 $('#modal-save').on('click',function(){
 	 $.ajax({
             method: 'POST',
+<<<<<<< HEAD
             url: urlEdit,
+=======
+            url: url,
+>>>>>>> origin/master
             data: {body: $('#post-body').val(), postId: postId, _token: token}
         })
 		.done(function(msg){
@@ -25,6 +29,7 @@ $('#modal-save').on('click',function(){
 
 				$('#edit-modal').modal('hide');
 		});
+<<<<<<< HEAD
 });
 
 $('.posts').find('.post').find('.interaction').find('.badge-warning').on('click', function(event) {
@@ -44,4 +49,6 @@ $('.posts').find('.post').find('.interaction').find('.badge-warning').on('click'
         		event.target.previousElementSibling.innerText = 'Like';
         	}
         });
+=======
+>>>>>>> origin/master
 });

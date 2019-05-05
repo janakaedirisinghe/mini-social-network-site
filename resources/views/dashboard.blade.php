@@ -10,8 +10,12 @@
 
 	<section class="row new-post">
 		<div class="col-md-6 col-md-offset-3">
+<<<<<<< HEAD
 			<header><h3>Hello  {{Auth::user()->first_name}}!</h3></header>
 			<header><h4>What do you have to say?</h4></header>
+=======
+			<header><h3>What do you have to say?</h3></header>
+>>>>>>> origin/master
 
 			<form action="{{ route('post.create') }}" method="post">
 				{{csrf_field()}}
@@ -97,6 +101,7 @@
   </div>
 </div>
 
+<<<<<<< HEAD
  <script>
          var token = '{{ Session::token() }}';
         var urlEdit = '{{ route('edit') }}';
@@ -105,6 +110,12 @@
 
 
 
+=======
+<script type="text/javascript">
+		var token = '{{ Session::token() }}';
+		var url ='{{ route('edit')  }}';
+</script>
+>>>>>>> origin/master
 
 @endsection
 

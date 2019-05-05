@@ -76,9 +76,12 @@ Route::post('/updateaccount',[
 Route::get('/userimage/{filename}',[
 	'uses' => 'UserController@getUserImage',
 	'as' => 'account.image'
+<<<<<<< HEAD
 ]);
 
 Route::post('/like', [
     'uses' => 'PostController@postLikePost',
     'as' => 'like'
+=======
+>>>>>>> origin/master
 ]);

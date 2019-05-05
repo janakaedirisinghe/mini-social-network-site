@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
 @extends('layouts.master')
 
 @section('title')
@@ -26,7 +30,11 @@
     @if (Storage::disk('local')->has($user->first_name . '-' . $user->id . '.jpg'))
         <section class="row new-post">
             <div class="col-md-6 col-md-offset-3">
+<<<<<<< HEAD
                 <img src="{{ route('account.image', ['filename' => $user->first_name . '-' . $user->id . '.jpg']) }}" alt="" class="img-responsive" width="300px" >
+=======
+                <img src="{{ route('account.image', ['filename' => $user->first_name . '-' . $user->id . '.jpg']) }}" alt="" class="img-responsive">
+>>>>>>> origin/master
             </div>
         </section>
     @endif
