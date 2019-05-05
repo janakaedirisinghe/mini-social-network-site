@@ -1,42 +1,24 @@
 @extends('layouts.master')
+
 @section('title')
-	Dashboard
+    View Post
 @endsection
 
 @section('content')
 
-@include('includes.message-block')
+<section class="row posts">
 
+	<div class="col-md-6 col-md-offset-3">
 
-	<section class="row new-post">
-		<div class="col-md-6 col-md-offset-3">
-			<header><h3>Hello  {{Auth::user()->first_name}}!</h3></header>
-			<header><h4>What do you have to say?</h4></header>
+				<header><h3>What  says...</h3></header>
 
-			<form action="{{ route('post.create') }}" method="post">
-				{{csrf_field()}}
-				<div class="form-group">
-					<textarea name="body" id="new-post" rows="5" placeholder="Your post" class="form-control"></textarea>
-
-				</div>
-				<button type="submit" class="btn btn-primary" >Create Post</button>
-				<input type="hidden" name="" value="{{ Session::token() }}" name="_token">
-			</form>
-		</div>
-	</section>
-
-
-	<section class="row posts">
-			
-			<div class="col-md-6 col-md-offset-3">
-				<header><h3>What other people say...</h3></header>
 				@foreach($posts as $post)
 					<article class="post" data-postid="{{ $post->id }}">
 						<p>
 							{{ $post ->body  }}
 						</p>
 						<div class="info">
-							Post by <a href="{{ route('user.post',['user_id' => $post->user_id ]) }}" style="text-decoration: none;color: black;">{{$post->user->first_name}}</a> <small>on {{ $post-> created_at}}  updated on {{ $post-> updated_at }}</small>
+							Post by <a href="{{ route('user.post',['user_id' => $post->user_id ]) }}" style="text-decoration: none;color: #aaa;">{{$post->user->first_name}}</a> <small>on {{ $post-> created_at}}  updated on {{ $post-> updated_at }}</small>
 						</div>
 						<div class="interaction">
 
@@ -59,12 +41,8 @@
 
 
 				@endforeach
-				
-				
 			</div>
-
-	</section>
-
+			</section>
 
 
 
@@ -107,4 +85,3 @@
 
 
 @endsection
-

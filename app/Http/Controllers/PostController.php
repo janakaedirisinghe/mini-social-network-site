@@ -50,6 +50,16 @@ class PostController extends Controller
 
 
     }
+
+    public function getUserPost($user_id){
+    		$posts = Post::orderBy('created_at','desc')->where('user_id',$user_id)->get();
+
+			return view('userpost',['posts' => $posts]);
+
+
+    }
+
+
     public function postEditPost(Request $request){
 
     	$this->validate($request,[

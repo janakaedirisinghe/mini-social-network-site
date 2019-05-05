@@ -4,11 +4,11 @@
 @if(count($errors) > 0)
 <div class="row">
 	<div class="col-md-12">
-		
+		<div class="alert alert-danger">
 			@foreach($errors->all() as $error)
-				<div class="alert alert-danger">{{$error}}</div>
+				{{$error}}<br>
 			@endforeach
-		
+		</div>
 	</div>
 </div>
 @endif
